@@ -125,16 +125,16 @@
         case 'PROD':
             $database = array(
                 'host'        => '127.0.0.1',
-                'username'    => 'username',
-                'password'    => 'password',
+                'username'    => 'root',
+                'password'    => 'root',
                 'dbname'      => 'phalcon_boilerplate'
             );
         break;
         case 'DEV':
             $database = array(
                 'host'        => '127.0.0.1',
-                'username'    => 'phalcon',
-                'password'    => 'phalcon',
+                'username'    => 'root',
+                'password'    => 'root',
                 'dbname'      => 'phalcon_boilerplate'
             );
 

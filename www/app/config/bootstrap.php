@@ -196,7 +196,7 @@ class Bootstrap
         $loader->register();
 
         // Composer Autoloading
-        require_once $config->application->vendorDir . '/autoload.php';
+//        require_once $config->application->vendorDir . '/autoload.php';
 
         // Dump it in the DI to reuse it
         $this->di['loader'] = $loader;

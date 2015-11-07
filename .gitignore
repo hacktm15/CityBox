@@ -1,0 +1,5 @@
+.gitignore.swp
+.idea/
+.vagrant/
+VagrantFile
+ubuntu14-opengeo-boundlessgeo-suite.box
