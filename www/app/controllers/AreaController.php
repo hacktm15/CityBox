@@ -75,4 +75,9 @@ class AreaController extends ControllerBase
         } // post
 
     } // add
+
+    public function wfsAction()
+    {
+
+    }
 }

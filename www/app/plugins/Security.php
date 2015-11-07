@@ -115,7 +115,7 @@ EOT;
             'index'     => array('index', 'notFound', 'forbidden', 'internalServerError'),
             'user'      => array('myProfile', 'changePassword'),
             'country'   => array('index', 'add', 'edit', 'delete'),
-            'area'     => array('index', 'add')
+            'area'     => array('index', 'add', 'wfs')
         );
 
         $privateResources = array(

@@ -37,6 +37,7 @@
         <!-- GOOGLE FONT -->
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
+        <!-- MATERIALIZE FRAMEWORK STYLES -->
     </head>
     <body id="mainBody" class="smart-style-3">
 
@@ -97,7 +98,7 @@
             {{ javascript_include("/js/libs/SmartNotification.min.js") }}
             {{ javascript_include("/js/template/app.js") }}
             {{ javascript_include("/js/app/app-main.js") }}
-            {{ javascript_include("/js/libs/openlayers/v3.10.1/build/ol.js") }}
+            {{ javascript_include("/js/libs/openlayers/v3.5.0/build/ol.js") }}
         {% endif %}
 
         {% block jsfooter %}{% endblock %}
