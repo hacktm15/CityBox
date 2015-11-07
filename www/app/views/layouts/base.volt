@@ -21,6 +21,7 @@
             {# css includes #}
             {% if env == 'PROD' %}
                 {{ stylesheet_link("/css/prod/phalcon-boilerplate.min.css") }}
+                {{ stylesheet_link("/js/libs/openlayers/v3.10.1/css/ol.css") }}
             {% else %}
                 {{ stylesheet_link("/css/template/bootstrap.min.css") }}
                 {{ stylesheet_link("/css/template/font-awesome.min.css") }}
@@ -96,6 +97,7 @@
             {{ javascript_include("/js/libs/SmartNotification.min.js") }}
             {{ javascript_include("/js/template/app.js") }}
             {{ javascript_include("/js/app/app-main.js") }}
+            {{ javascript_include("/js/libs/openlayers/v3.10.1/build/ol.js") }}
         {% endif %}
 
         {% block jsfooter %}{% endblock %}

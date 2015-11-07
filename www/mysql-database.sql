@@ -1,17 +1,9 @@
-DROP DATABASE IF EXISTS `phalcon_boilerplate`;
-CREATE DATABASE `phalcon_boilerplate` DEFAULT CHARACTER SET `utf8`;
+
 
 USE `mysql`;
-CREATE USER 'phalcon'@'localhost' IDENTIFIED BY 'phalcon';
 
-INSERT INTO `db`
-(`Host`, `Db`, `User`, `Select_priv`, `Insert_priv`, `Update_priv`, `Delete_priv`, `Create_priv`, `Drop_priv`, `Grant_priv`, `References_priv`, `Index_priv`, `Alter_priv`, `Create_tmp_table_priv`, `Lock_tables_priv`, `Create_view_priv`, `Show_view_priv`, `Create_routine_priv`, `Alter_routine_priv`, `Execute_priv`)
-VALUES
-('localhost', 'phalcon_boilerplate', 'phalcon', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y');
 
-FLUSH PRIVILEGES;
-
-USE `phalcon_boilerplate`;
+USE `hacktm_dev`;
 
 CREATE TABLE `countries` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
