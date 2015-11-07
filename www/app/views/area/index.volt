@@ -15,18 +15,26 @@
 {% endblock %}
 
 {% block main %}
-    <p>Welcome to Phalcon Boilerplate.</p>
-    <p>Cras sed ante. Phasellus in massa. Curabitur dolor eros, gravida et, hendrerit ac, cursus non, massa. Aliquam lorem. In hac habitasse platea dictumst. Cras eu mauris. Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies. Vivamus elit eros, ullamcorper a, adipiscing sit amet, porttitor ut, nibh. Maecenas adipiscing mollis massa. Nunc ut dui eget nulla venenatis aliquet. Sed luctus posuere justo. Cras vehicula varius turpis. Vivamus eros metus, tristique sit amet, molestie dignissim, malesuada et, urna....</p>
+
+<div id="map" class="map"></div>
+<form class="form-inline">
+  <label>Geometry type &nbsp;</label>
+  <select id="type">
+    <option value="None">None</option>
+    <option value="Point">Point</option>
+    <option value="LineString">LineString</option>
+    <option value="Polygon">Polygon</option>
+    <option value="Circle">Circle</option>
+    <option value="Square">Square</option>
+    <option value="Box">Box</option>
+  </select>
+</form>
 
 {% endblock %}
 
 {% block jsfooter %}
-    <script type="text/javascript">
-        $(document).ready(function() {
 
-            // page level scripts
+    {{ javascript_include("/js/app/area/index.js") }}
 
-        });
-    </script>
 {% endblock %}
 
