@@ -27,7 +27,7 @@ var tiled = new ol.layer.Tile({
     })
 });
 var projection = new ol.proj.Projection({
-    code: 'EPSG:3844',
+    code: 'EPSG:3857',
     units: 'm',
     axisOrientation: 'neu'
 });
@@ -36,16 +36,22 @@ var map = new ol.Map({
     target: 'map',
 
     layers: [
+        //new ol.layer.Tile({
+        //    source: new ol.source.MapQuest({layer: 'sat'})
+        //}),
         new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})
+            source: new ol.source.OSM()
         }),
         untiled,
         tiled
     ],
     view: new ol.View({
-        projection: projection
+        projection: projection,
+        //center: ol.proj.transform([198259.5344, 477943.9778], 'EPSG:3844', 'EPSG:3857'),
+        center: ol.proj.transform([21.23,45.75], 'EPSG:4326', 'EPSG:3857'),
+        zoom:11
     })
 
 });
 
-map.getView().fit(bounds, map.getSize());
+//map.getView().fit(bounds, map.getSize());
