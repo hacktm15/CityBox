@@ -1,0 +1,7 @@
+app/cache
+app/logs
+node_modules/
+vendor/
+Vagrantfile
+.idea/*
+.vagrant/*
