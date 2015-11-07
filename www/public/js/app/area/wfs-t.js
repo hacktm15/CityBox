@@ -76,7 +76,7 @@ sourceVector = new ol.source.Vector({
                 service: 'WFS',
                 version: '1.1.0',
                 request: 'GetFeature',
-                typename: 'hacktm:utr_view',
+                typename: 'hacktm:utr',
                 srsname: 'EPSG:3857',
                 //cql_filter: "property='Value'",
                 //cql_filter: "BBOX(geometry," + extent.join(',') + ")",
@@ -143,7 +143,7 @@ var dirty = {};
 var formatWFS = new ol.format.WFS();
 var formatGML = new ol.format.GML({
     featureNS: 'hacktm',
-    featureType: 'utr_view',
+    featureType: 'utr',
     srsName: 'EPSG:3857'
 });
 var transactWFS = function(p,f) {
