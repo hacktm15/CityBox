@@ -27,7 +27,7 @@
         'securityDir'              => ROOT_PATH . '/app/cache/security/',
         'vendorDir'                => ROOT_PATH . '/vendor',
         'baseUri'                  => '',
-        'appTitle'                 => 'Phalcon Boilerplate',
+        'appTitle'                 => 'City Box',
         'appName'                  => 'phalcon-boilerplate',
         'baseUrl'                  => 'https://www.mywebsite.com',
         'env'                      => $env,

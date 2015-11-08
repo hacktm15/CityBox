@@ -28,6 +28,10 @@
                 <a href="/country" title="Countries"><i class="fa fa-lg fa-fw fa-flag"></i> <span class="menu-item-parent">Countries</span></a>
             </li>
 
+            <li {% if selLeftNav == "country" %} class="active" {% endif %}>
+                <a href="/area/wfs" title="Area"><i class="fa fa-lg fa-fw fa-flag"></i> <span class="menu-item-parent">Area</span></a>
+            </li>
+
             {% if sessionUserRole == 'admin' %}
                 <li {% if selLeftNav == "user" %} class="active" {% endif %}>
                     <a href="/user" title="Users"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">Users</span></a>
