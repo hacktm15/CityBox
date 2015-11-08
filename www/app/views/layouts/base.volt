@@ -98,7 +98,7 @@
             {{ javascript_include("/js/libs/SmartNotification.min.js") }}
             {{ javascript_include("/js/template/app.js") }}
             {{ javascript_include("/js/app/app-main.js") }}
-            {{ javascript_include("/js/libs/openlayers/v3.5.0/build/ol.js") }}
+            {{ javascript_include("/js/libs/openlayers/v3.5.0/build/ol-debug.js") }}
         {% endif %}
 
         {% block jsfooter %}{% endblock %}

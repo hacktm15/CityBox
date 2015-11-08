@@ -83,6 +83,7 @@ sourceVector = new ol.source.Vector({
                 bbox: extent.join(',') + ',EPSG:3857'
             },
         }).done(function(response) {
+            console.log("done",response)
             formatWFS = new ol.format.WFS(),
                 sourceVector.addFeatures(formatWFS.readFeatures(response))
         });
@@ -111,8 +112,15 @@ layerOSM_BW = new ol.layer.Tile({
     })
 });
 
+var projection = new ol.proj.Projection({
+    code: 'EPSG:3857',
+    units: 'm',
+    axisOrientation: 'neu'
+});
+
 var map = new ol.Map({
     target: 'map',
+    projection:projection,
     overlays: [overlayPopup],
     controls: [controlMousePos],
     layers: [layerOSM, layerVector],
@@ -140,12 +148,17 @@ var select = new ol.interaction.Select({
 
 //wfs-t
 var dirty = {};
-var formatWFS = new ol.format.WFS();
-var formatGML = new ol.format.GML({
+var formatWFS = new ol.format.WFS({featureNS:"hacktm",featureType:'utr',schemaLocation:"http://www.opengis.net/wfs \
+                    http://schemas.opengis.net/wfs/1.1.0/WFS-transaction.xsd \
+                    http://hacktm.lo:8080/geoserver/wfs?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=hacktm:utr"});
+var formatGML = {
+    gmlOptions: {srsName: "http://www.opengis.net/gml/srs/epsg.xml#3857"},
     featureNS: 'hacktm',
     featureType: 'utr',
-    srsName: 'EPSG:3857'
-});
+    srsName: 'http://www.opengis.net/gml/srs/epsg.xml#3857',
+    schemaLocation: 'http://hacktm.lo:8080/geoserver/wfs?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=hacktm:utr'
+};
+
 var transactWFS = function(p,f) {
     switch(p) {
         case 'insert':
@@ -255,12 +268,32 @@ $('.btnMenu').on('click', function(event) {
 
         case 'btnDrawPoly':
             interaction = new ol.interaction.Draw({
-                type: 'Polygon',
+                type: 'MultiPolygon',
+                geometryName: 'the_geom',
                 source: layerVector.getSource()
             });
             map.addInteraction(interaction);
             interaction.on('drawend', function(e) {
-                transactWFS('insert',e.feature);
+                //var f = e.feature;
+                //var featureProperties = f.getProperties();
+                //delete featureProperties.boundedBy;
+                //var clone = new ol.Feature(featureProperties);
+                //clone.setId(f.getId());
+                //
+                //console.log('feature clone:',clone.getGeometry());
+                //var pS = new ol.proj.Projection({
+                //    code: 'EPSG:3857',
+                //    units: 'm',
+                //    axisOrientation: 'neu'
+                //});
+                //var pD = new ol.proj.Projection({
+                //    code: 'EPSG:3844',
+                //    units: 'm',
+                //    axisOrientation: 'neu'
+                //});
+                //clone.getGeometry().transform(pS,pD);
+                //console.log('new geom',clone);
+                transactWFS('insert', e.feature);
             });
             break;
 
