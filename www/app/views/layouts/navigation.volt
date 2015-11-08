@@ -23,7 +23,7 @@
             <li {% if selLeftNav == "Dashboard" %} class="active" {% endif %}>
                 <a href="/" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
             </li>
-            
+
             <li {% if selLeftNav == "country" %} class="active" {% endif %}>
                 <a href="/country" title="Countries"><i class="fa fa-lg fa-fw fa-flag"></i> <span class="menu-item-parent">Countries</span></a>
             </li>
@@ -37,9 +37,15 @@
                     <a href="/user" title="Users"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">Users</span></a>
                 </li>
             {% endif %}
+            <li {% if selLeftNav == "area/add" %} class="active" {% endif %}>
+                <a href="/area/add" title="Area"><i class="fa fa-lg fa-fw fa-flag"></i> <span class="menu-item-parent">Area</span></a>
+            </li>
+
+            <li {% if selLeftNav == "area/wfs" %} class="active" {% endif %}>
+                <a href="/area/wfs" title="WFS"><i class="fa fa-lg fa-fw fa-flag"></i> <span class="menu-item-parent">WFS</span></a>
+            </li>
         </ul>
     </nav>
     <span class="minifyme"> <i class="fa fa-arrow-circle-left hit"></i> </span>
-
 </aside>
 <!-- END NAVIGATION -->
